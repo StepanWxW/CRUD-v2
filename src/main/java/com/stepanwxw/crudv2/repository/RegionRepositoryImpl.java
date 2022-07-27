@@ -18,7 +18,7 @@ public class RegionRepositoryImpl implements RegionRepository {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     List<Region> regions = new ArrayList<>();
     Region region;
-     public Long generateId() {
+    private Long generateId() {
          long id = 1L;
         Optional<Region> optGenerateId = regions.stream().max(Comparator.comparing(Region::getId));
         optGenerateId.ifPresent(value -> region = value);
@@ -76,11 +76,11 @@ public class RegionRepositoryImpl implements RegionRepository {
         openFile();
         Region regionNew = returnId(region.getId());
         if (regionNew == null){
-            regions.add(region);
+            region = null;
         }
         else {
             regions.remove(regionNew);
-            regions.add(region);;
+            regions.add(region);
             regions = regions.stream().sorted(((o2, o1) -> -o1.getId().compareTo(o2.getId()))).collect(Collectors.toList());
         }
         writeFile();

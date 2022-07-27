@@ -1,10 +1,11 @@
-package com.stepanwxw.crudv2.repository.implementation;
+package com.stepanwxw.crudv2.repository;
 
 import com.stepanwxw.crudv2.model.User;
+import com.stepanwxw.crudv2.repository.implementation.UserRepository;
 
 import java.util.List;
 
-public class UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl implements UserRepository {
     @Override
     public User create(User user) {
         return null;

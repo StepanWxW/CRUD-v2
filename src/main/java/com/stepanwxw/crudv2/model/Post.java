@@ -8,7 +8,7 @@ public class Post {
    private Timestamp create;
    private Timestamp update;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
