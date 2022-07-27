@@ -7,7 +7,6 @@ import com.stepanwxw.crudv2.repository.RegionRepositoryImpl;
 public class Start {
     public static void main(String[] args) {
         RegionRepositoryImpl repository = new RegionRepositoryImpl();
-        repository.create(new Region(15L,"Tomsk"));
-        repository.create(new Region(10L,"gfdghf"));
+
     }
 }
