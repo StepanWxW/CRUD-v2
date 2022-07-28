@@ -36,7 +36,11 @@ public class PostRepositoryImpl implements PostRepository {
     }
     private Post returnId(Long id) {
         Optional<Post> optReturnId = posts.stream().filter((s) -> Objects.equals(s.getId(), id)).findFirst();
-        optReturnId.ifPresent(value -> post = value);
+        if(optReturnId.isPresent()) {
+            optReturnId.ifPresent(value -> post = value);
+        }else {
+            post = null;
+        }
         return post;
     }
     private void openFile() {

@@ -29,7 +29,11 @@ public class RegionRepositoryImpl implements RegionRepository {
     }
     private Region returnId(Long id) {
        Optional<Region> optReturnId = regions.stream().filter((s) -> Objects.equals(s.getId(), id)).findFirst();
-        optReturnId.ifPresent(value -> region = value);
+        if(optReturnId.isPresent()) {
+            optReturnId.ifPresent(value -> region = value);
+        }else {
+            region = null;
+        }
        return region;
     }
     private void openFile() {
