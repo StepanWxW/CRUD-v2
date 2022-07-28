@@ -10,18 +10,18 @@ public class RegionMenu {
     private String scanLine(){
        return new Scanner(System.in).nextLine();
     }
-    public void regionMenu() {
+    public void menu() {
         System.out.println("Chose \"1\"- Create, \"2\" - ReadAll, \"3\" - ReadId," +
                 " \"4\" - DeleteId, \"5\" - UpdateId");
         switch (scanLine()) {
-            case ("1"): createRegion(); break;
+            case ("1"): create(); break;
             case ("2"): readAll(); break;
             case ("3"): readId(); break;
             case ("4"): deleteId(); break;
             case ("5"): updateId(); break;
         }
     }
-    private void createRegion() {
+    private void create() {
         System.out.println("Enter Region please:");
         regionRepository.create(new Region(scanLine()));
         System.out.println("Congratulation: create is complete.");

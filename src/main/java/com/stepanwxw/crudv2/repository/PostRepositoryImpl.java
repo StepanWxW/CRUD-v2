@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.stepanwxw.crudv2.model.Post;
-import com.stepanwxw.crudv2.model.Region;
 import com.stepanwxw.crudv2.repository.implementation.PostRepository;
 
 import java.io.FileReader;
