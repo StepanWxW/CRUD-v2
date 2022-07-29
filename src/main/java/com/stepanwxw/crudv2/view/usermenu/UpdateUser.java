@@ -3,9 +3,9 @@ import com.stepanwxw.crudv2.model.User;
 import com.stepanwxw.crudv2.view.UserMenu;
 
 public class UpdateUser extends WorkUser {
-    UserMenu userMenu = new UserMenu();
+//    UserMenu userMenu = new UserMenu();
     public void update() {
-        userMenu.readAll();
+//        userMenu.readAll();
         System.out.println("Enter id user please:");
         try {
             Long readId = Long.valueOf(scanLine());
@@ -21,7 +21,6 @@ public class UpdateUser extends WorkUser {
                 regionAllRead();
                 regionAdd();
                 roleAdd();
-                userRepository.remove(readId);
                 userRepository.update(new User(readId, firstName, lastName, postList, region, role));
                 System.out.println("Congratulation: user update is complete.");
             }
