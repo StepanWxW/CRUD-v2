@@ -13,10 +13,10 @@ public class MainMenu {
                     new RegionMenu().startRegionMenu();
                     break;
                 case ("2"):
-                    new PostMenu().menu();
+                    new PostMenu().startPostMenu();
                     break;
                 case ("3"):
-                    new UserMenu().menu();
+                    new UserMenu().startUserMenu();
                     break;
                 default:
                     System.out.println("Please write number (for example: 2)");

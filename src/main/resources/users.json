@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+    "lastName": "PPPPPPPPPPPPPPPPPPPPP",
+    "region": {
+      "id": 1,
+      "name": "Tomsk"
+    },
+    "posts": [
+      {
+        "id": 1,
+        "content": "Super",
+        "create": "Aug 2, 2022 5:21:20 PM",
+        "update": "Aug 2, 2022 5:21:20 PM"
+      }
+    ],
+    "role": "ADMIN"
+  }
+]

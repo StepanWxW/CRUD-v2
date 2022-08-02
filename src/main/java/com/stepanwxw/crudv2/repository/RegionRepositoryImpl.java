@@ -82,6 +82,5 @@ public class RegionRepositoryImpl implements RegionRepository {
             System.out.println("Problem with fileWriter" + e);
         }
     }
-
 }
 
