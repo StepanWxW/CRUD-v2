@@ -2,24 +2,31 @@ package com.stepanwxw.crudv2.view;
 
 import com.stepanwxw.crudv2.directory.MenuDirectory;
 import com.stepanwxw.crudv2.model.Region;
-import com.stepanwxw.crudv2.repository.NoEntityException;
 import com.stepanwxw.crudv2.repository.RegionRepositoryImpl;
 
 import java.util.Scanner;
 
 public class RegionMenu {
     RegionRepositoryImpl regionRepository = new RegionRepositoryImpl();
-    private String scanLine(){
-       return new Scanner(System.in).nextLine();
-    }
-    public void menu() {
+
+    public void startRegionMenu() {
         System.out.println(MenuDirectory.MAIN_MENU);
         switch (scanLine()) {
-            case ("1"): create(); break;
-            case ("2"): readAll(); break;
-            case ("3"): readId(); break;
-            case ("4"): deleteId(); break;
-            case ("5"): updateId(); break;
+            case ("1"):
+                create();
+                break;
+            case ("2"):
+                readAll();
+                break;
+            case ("3"):
+                readId();
+                break;
+            case ("4"):
+                deleteId();
+                break;
+            case ("5"):
+                updateId();
+                break;
         }
     }
     private void create() {
@@ -62,5 +69,8 @@ public class RegionMenu {
         } catch (NumberFormatException e) {
             System.out.println("Input number please");
         }
+    }
+    private String scanLine(){
+        return new Scanner(System.in).nextLine();
     }
 }

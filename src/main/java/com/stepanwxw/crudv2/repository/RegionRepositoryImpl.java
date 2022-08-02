@@ -55,8 +55,10 @@ public class RegionRepositoryImpl implements RegionRepository {
 
     @Override
     public Region update(Region region) {
-        remove(region.getId());
         List<Region> regionsListUpdate = getAll();
+        regionsListUpdate = regionsListUpdate.stream()
+                .filter((p) -> !Objects.equals(p.getId(), region.getId()))
+                .collect(Collectors.toList());
         regionsListUpdate.add(region);
         regionsListUpdate = regionsListUpdate.stream().
                 sorted(((o2, o1) -> -o1.getId().compareTo(o2.getId()))).
