@@ -1,7 +1,8 @@
 package com.stepanwxw.crudv2.view;
+import com.stepanwxw.crudv2.directory.MenuDirectory;
 import com.stepanwxw.crudv2.repository.UserRepositoryImpl;
-import com.stepanwxw.crudv2.view.usermenu.CreateUser;
-import com.stepanwxw.crudv2.view.usermenu.UpdateUser;
+import com.stepanwxw.crudv2.view.userView.CreateUser;
+import com.stepanwxw.crudv2.view.userView.UpdateUser;
 
 import java.util.Scanner;
 
@@ -13,8 +14,7 @@ public class UserMenu {
         return new Scanner(System.in).nextLine();
     }
     public void menu() {
-        System.out.println("Chose \"1\"- Create, \"2\" - ReadAll, \"3\" - ReadId," +
-                " \"4\" - DeleteId, \"5\" - UpdateId");
+        System.out.println(MenuDirectory.MAIN_MENU);
         switch (scanLine()) {
             case ("1"): createUser.create(); break;
             case ("2"): readAll(); break;

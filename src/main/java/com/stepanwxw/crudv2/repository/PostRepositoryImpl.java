@@ -3,6 +3,7 @@ package com.stepanwxw.crudv2.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.stepanwxw.crudv2.directory.JsonDirectory;
 import com.stepanwxw.crudv2.model.Post;
 import com.stepanwxw.crudv2.repository.implementation.PostRepository;
 
@@ -44,7 +45,7 @@ public class PostRepositoryImpl implements PostRepository {
     }
     private void openFile() {
         Type itemsListType = new TypeToken<List<Post>>() {}.getType();
-        try (FileReader fileReader = new FileReader(filePosts)){
+        try (FileReader fileReader = new FileReader(JsonDirectory.POST)){
             List<Post> testNull;
             testNull = gson.fromJson(fileReader, itemsListType);
             if (testNull != null) {
@@ -55,7 +56,7 @@ public class PostRepositoryImpl implements PostRepository {
         }
     }
     private void writeFile() {
-        try (FileWriter fileWriter = new FileWriter(filePosts)){
+        try (FileWriter fileWriter = new FileWriter(JsonDirectory.POST)){
             gson.toJson(posts, fileWriter);
         } catch (IOException e) {
             System.out.println("Problem with fileWriter" + e);

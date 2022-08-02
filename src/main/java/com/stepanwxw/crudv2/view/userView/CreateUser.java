@@ -1,4 +1,4 @@
-package com.stepanwxw.crudv2.view.usermenu;
+package com.stepanwxw.crudv2.view.userView;
 
 import com.stepanwxw.crudv2.model.User;
 

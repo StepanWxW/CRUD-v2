@@ -1,6 +1,8 @@
 package com.stepanwxw.crudv2.view;
 
+import com.stepanwxw.crudv2.directory.MenuDirectory;
 import com.stepanwxw.crudv2.model.Region;
+import com.stepanwxw.crudv2.repository.NoEntityException;
 import com.stepanwxw.crudv2.repository.RegionRepositoryImpl;
 
 import java.util.Scanner;
@@ -11,8 +13,7 @@ public class RegionMenu {
        return new Scanner(System.in).nextLine();
     }
     public void menu() {
-        System.out.println("Chose \"1\"- Create, \"2\" - ReadAll, \"3\" - ReadId," +
-                " \"4\" - DeleteId, \"5\" - UpdateId");
+        System.out.println(MenuDirectory.MAIN_MENU);
         switch (scanLine()) {
             case ("1"): create(); break;
             case ("2"): readAll(); break;
@@ -36,25 +37,16 @@ public class RegionMenu {
         System.out.println("Enter id region please:");
         try {
             Long readId = Long.valueOf(scanLine());
-            if (regionRepository.getByID(readId) == null) {
-                System.out.println("This object is missing.");
-            } else {
-                System.out.println(regionRepository.getByID(readId));
-            }
+            System.out.println(regionRepository.getByID(readId));
         } catch (NumberFormatException e) {
             System.out.println("Input number please");
         }
-    }
+            }
     private void deleteId() {
         System.out.println("Enter id to delete region please:");
         try {
             Long readId = Long.valueOf(scanLine());
-            if (regionRepository.getByID(readId) == null) {
-                System.out.println("This object is missing.");
-            } else {
                 regionRepository.remove(readId);
-                System.out.println("Region id: " + readId + " delete is complete.");
-            }
         } catch (NumberFormatException e) {
             System.out.println("Input number please");
         }
@@ -63,12 +55,9 @@ public class RegionMenu {
         System.out.println("Enter id to update region please:");
         try {
             Long readId = Long.valueOf(scanLine());
-            if (regionRepository.getByID(readId) == null) {
-                System.out.println("This object is missing.");
-            } else {
+            if(regionRepository.getByID(readId) != null) {
                 System.out.println("Enter please new region for id: " +readId);
                 regionRepository.update(new Region(readId, scanLine()));
-                System.out.println("Region id: " + readId + " update is complete.");
             }
         } catch (NumberFormatException e) {
             System.out.println("Input number please");

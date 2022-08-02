@@ -3,6 +3,7 @@ package com.stepanwxw.crudv2.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.stepanwxw.crudv2.directory.JsonDirectory;
 import com.stepanwxw.crudv2.model.User;
 import com.stepanwxw.crudv2.repository.implementation.UserRepository;
 
@@ -40,7 +41,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
     private void openFile() {
         Type itemsListType = new TypeToken<List<User>>() {}.getType();
-        try (FileReader fileReader = new FileReader(fileUser)){
+        try (FileReader fileReader = new FileReader(JsonDirectory.USER)){
             List<User> testNull;
             testNull = gson.fromJson(fileReader, itemsListType);
             if (testNull != null) {
@@ -51,7 +52,7 @@ public class UserRepositoryImpl implements UserRepository {
         }
     }
     private void writeFile() {
-        try (FileWriter fileWriter = new FileWriter(fileUser)){
+        try (FileWriter fileWriter = new FileWriter(JsonDirectory.USER)){
             gson.toJson(users, fileWriter);
         } catch (IOException e) {
             System.out.println("Problem with fileWriter" + e);

@@ -1,6 +1,7 @@
 package com.stepanwxw.crudv2.repository.implementation;
 
 import com.stepanwxw.crudv2.model.Region;
+import com.stepanwxw.crudv2.repository.NoEntityException;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface RegionRepository extends GenericRepository<Region, Long> {
     List<Region> getAll();
 
     @Override
-    Region getByID(Long id);
+    Region getByID(Long id) throws NoEntityException;
 
     @Override
     Region update(Region region);
