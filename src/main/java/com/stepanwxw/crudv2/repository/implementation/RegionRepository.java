@@ -1,7 +1,7 @@
 package com.stepanwxw.crudv2.repository.implementation;
 
 import com.stepanwxw.crudv2.model.Region;
-import com.stepanwxw.crudv2.repository.NoEntityException;
+import com.stepanwxw.crudv2.exception.NoEntityException;
 
 import java.util.List;
 

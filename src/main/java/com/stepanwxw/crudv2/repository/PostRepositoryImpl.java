@@ -3,6 +3,7 @@ package com.stepanwxw.crudv2.repository;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.stepanwxw.crudv2.directory.JsonDirectory;
+import com.stepanwxw.crudv2.exception.NoEntityException;
 import com.stepanwxw.crudv2.model.Post;
 import com.stepanwxw.crudv2.repository.implementation.PostRepository;
 

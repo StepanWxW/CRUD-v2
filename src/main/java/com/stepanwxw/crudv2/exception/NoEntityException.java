@@ -1,4 +1,4 @@
-package com.stepanwxw.crudv2.repository;
+package com.stepanwxw.crudv2.exception;
 
 
 public class NoEntityException extends RuntimeException {

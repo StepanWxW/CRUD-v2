@@ -16,5 +16,23 @@
       }
     ],
     "role": "ADMIN"
+  },
+  {
+    "id": 2,
+    "firstName": "ee",
+    "lastName": "PP",
+    "region": {
+      "id": 1,
+      "name": "Tomsk"
+    },
+    "posts": [
+      {
+        "id": 1,
+        "content": "Super",
+        "create": "Aug 2, 2022 5:21:20 PM",
+        "update": "Aug 2, 2022 5:21:20 PM"
+      }
+    ],
+    "role": "MODERATOR"
   }
 ]

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.stepanwxw.crudv2.directory.JsonDirectory;
+import com.stepanwxw.crudv2.exception.NoEntityException;
 import com.stepanwxw.crudv2.model.Region;
 import com.stepanwxw.crudv2.repository.implementation.RegionRepository;
 
