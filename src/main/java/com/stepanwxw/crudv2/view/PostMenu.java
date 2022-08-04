@@ -69,6 +69,7 @@ public class PostMenu {
             System.out.println("Input number please");
         }
     }
+
     private String scanLine(){
         return new Scanner(System.in).nextLine();
     }
